@@ -13,14 +13,6 @@ import { getData } from '@/lib/actions';
 import { useEffect, useState } from 'react';
 import { generateColor } from '@/lib/utils';
 
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-]
-
 const chartConfig = {
   visitors: {
     label: "Visitors",
@@ -67,7 +59,7 @@ export default function Statiscics() {
         return acc;
       }, {});
 
-      const fixedItems = Object.values(result).map((item, idx) => {
+      const fixedItems = Object.values(result).map((item) => {
         return {
           product: item.Product,
           qty: item.Qty,

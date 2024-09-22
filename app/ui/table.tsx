@@ -27,7 +27,7 @@ export default async function MainTable() {
           const { Product, Status, Qty, Value } = row;
 
           return (
-            <TableRow>
+            <TableRow key={`${Product + Status + Qty + Value + Date.now()}`}>
               <TableCell>{Product}</TableCell>
               <TableCell>{Status}</TableCell>
               <TableCell className='font-medium'>
